@@ -43,4 +43,19 @@ public class QuestionService
         System.out.println("Your Final Score is: "+ score);
 
     }
+    public void displayCorrectAnswers()
+    {
+        System.out.println("Here are the correct answers");
+        for(int i = 0; i < questions.length; i++)
+        {
+            if(questions[i].getAnswer().equalsIgnoreCase(typedAnswer[i]))
+            {
+                System.out.println(questions[i].getId() +". " + questions[i].getAnswer() + " -You got the Correct Answer");
+            }
+            else
+            {
+                System.out.println(questions[i].getId() +". " + questions[i].getAnswer());
+            }
+        }
+    }
 }
