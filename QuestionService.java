@@ -46,16 +46,18 @@ public class QuestionService
     public void displayCorrectAnswers()
     {
         System.out.println("Here are the correct answers");
-        for(int i = 0; i < questions.length; i++)
+        int i = 0;
+        for (Question question : questions) //enhanced for loop
         {
-            if(questions[i].getAnswer().equalsIgnoreCase(typedAnswer[i]))
+            if(question.getAnswer().equalsIgnoreCase(typedAnswer[i]))
             {
-                System.out.println(questions[i].getId() +". " + questions[i].getAnswer() + " -You got the Correct Answer");
+                System.out.println(question.getId() +". " + question.getAnswer() + " -You got the Correct Answer");
             }
             else
             {
-                System.out.println(questions[i].getId() +". " + questions[i].getAnswer());
+                System.out.println(question.getId() +". " + question.getAnswer());
             }
+            i++;
         }
     }
 }
